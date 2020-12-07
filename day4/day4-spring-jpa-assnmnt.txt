@@ -1,0 +1,24 @@
+
+Assignment for day4 (Hibernate, JPA and Spring)
+
+1. Create the following
+
+public interface EmpDao{
+
+public String save(Emp e);
+public List<Emp> list();
+public Emp findById(int id);
+
+}
+
+
+public class EmpDaoJpaImpl implements EmpDao{
+
+//implement the interface methods here
+
+}
+
+Task:
+1. Integrate Spring with JPA (with Hibernate)
+2. Implement the above class with the help of EntityManager injected from SpringIOC
+3. Write Test Code to test the methods.
