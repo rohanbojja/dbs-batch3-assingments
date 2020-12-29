@@ -1,0 +1,15 @@
+mat-drawer-container{
+  height: 100%;
+}
+mat-drawer {
+  width: max-content;
+  padding-right: 20px;
+}
+
+mat-drawer-content{
+  margin: 2%;
+}
+h1 {
+  margin: 0 auto;
+  text-align: center;
+}

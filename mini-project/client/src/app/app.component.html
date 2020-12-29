@@ -1,0 +1,19 @@
+<!--<app-nav></app-nav>-->
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+    </button>
+    <h1>{{title$ | async}}</h1>
+    <span class="menu-spacer"></span>
+  </mat-toolbar-row>
+<!--  <mat-toolbar-row>-->
+<!--        <app-nav></app-nav>-->
+<!--  </mat-toolbar-row>-->
+</mat-toolbar>
+<mat-drawer-container>
+  <mat-drawer #drawer mode="push"><app-nav></app-nav></mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,11 @@
+<h2>Enter ID to find customer:</h2>
+<form name="form" #form="ngForm">
+  <mat-form-field>
+    <mat-label>Customer ID</mat-label>
+    <input matInput name="customerId" (keyup)="filterById(form.form.value)" type="string" ngModel/>
+  </mat-form-field>
+</form>
+<div *ngIf="customer$ | async as customer">
+  <h2>Current customer:</h2>
+  <app-customer-detail [customer]="customer"></app-customer-detail>
+</div>

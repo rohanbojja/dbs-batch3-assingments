@@ -1,0 +1,28 @@
+<h2>New customer:</h2><br>
+<div class="container">
+  <form name="form" (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput name="customerName" type="string" ngModel required/>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Address</mat-label>
+      <input matInput name="address" type="string" ngModel required/>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Mobile</mat-label>
+      <input matInput name="mobileNo" type="tel" ngModel required/>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="email" placeholder="E-mail" ngModel required>
+    </mat-form-field>
+    <button
+      class="buttons"
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!form.form.valid">
+      Submit
+    </button>
+  </form>
+</div>
