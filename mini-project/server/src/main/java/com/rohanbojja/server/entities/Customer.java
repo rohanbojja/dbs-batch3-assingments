@@ -1,5 +1,6 @@
 package com.rohanbojja.server.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -31,4 +32,12 @@ public class Customer {
     @NotBlank(message = "Mobile number is required.")
     private String mobileNo;
     private boolean favorite;
+
+    public Customer(@NotBlank(message = "Customer name is required.") @Size(min = 3, max = 50) String customerName, @NotBlank(message = "An address is required.") @Size(min = 10, max = 255) String address, @Email @NotBlank(message = "Email address is required.") @Size(min = 7, max = 255) String email, @Size(min = 10, max = 10) @NotBlank(message = "Mobile number is required.") String mobileNo, boolean favorite) {
+        this.customerName = customerName;
+        this.address = address;
+        this.email = email;
+        this.mobileNo = mobileNo;
+        this.favorite = favorite;
+    }
 }

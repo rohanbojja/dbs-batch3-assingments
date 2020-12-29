@@ -25,6 +25,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { CustomerEditComponent } from './customer-edit/customer-edit.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import {MatCardModule} from '@angular/material/card';
     CreateCustomerComponent,
     DeleteCustomerComponent,
     FindCustomerComponent,
-    CustomerDetailComponent
+    CustomerDetailComponent,
+    CustomerEditComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +58,7 @@ import {MatCardModule} from '@angular/material/card';
     MatInputModule,
     ReactiveFormsModule,
     MatCardModule,
+    MatSnackBarModule
   ],
   providers: [
     NavService,

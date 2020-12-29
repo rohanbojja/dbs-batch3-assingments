@@ -2,7 +2,7 @@
 <form name="form" #form="ngForm">
   <mat-form-field>
     <mat-label>Customer ID</mat-label>
-    <input matInput name="customerId" (keyup)="filterById(form.form.value)" type="string" ngModel/>
+    <input matInput name="customerId" (keyup.enter)="filterById(form.form.value)" type="string" ngModel/>
   </mat-form-field>
 </form>
 <div *ngIf="customer$ | async as customer">

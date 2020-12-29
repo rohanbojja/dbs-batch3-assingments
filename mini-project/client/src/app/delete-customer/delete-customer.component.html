@@ -1,23 +1,20 @@
 <h2>Enter ID to delete:</h2>
-<form name="form" #form="ngForm">
-  <mat-form-field>
-    <mat-label>Customer ID</mat-label>
-    <input matInput name="customerId" (click)="delete(form.form.value)" type="string" ngModel/>
+<div class="container">
+  <form name="form" #form="ngForm">
+    <mat-form-field>
+      <mat-label>Customer ID</mat-label>
+      <input matInput name="customerId" type="string" ngModel/>
+    </mat-form-field>
+    &nbsp;
     <button
       class="buttons"
       mat-raised-button
       color="primary"
       type="submit"
+      (click)="delete(form.form.value)"
       [disabled]="!form.form.valid">
       Submit
     </button>
-  </mat-form-field>
-  <button
-    class="buttons"
-    mat-raised-button
-    color="primary"
-    type="submit"
-    [disabled]="!form.form.valid">
-    Submit
-  </button>
-</form>
+  </form>
+
+</div>

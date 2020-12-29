@@ -24,7 +24,7 @@ public class CustomerController {
         return c2.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.badRequest().build());
     }
 
-    @GetMapping("/")
+    @GetMapping("/list")
     public ResponseEntity<List<Customer>> list() {
         return ResponseEntity.ok(customerService.list());
     }

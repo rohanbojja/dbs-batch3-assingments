@@ -53,10 +53,4 @@ export class HomeComponent implements OnInit {
       }
     );
   }
-
-  selectCustomer(c: ICustomer): void{
-    console.log(c);
-    this.customer$.next(c);
-  }
-
 }

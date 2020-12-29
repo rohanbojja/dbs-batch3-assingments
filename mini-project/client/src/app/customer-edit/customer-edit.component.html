@@ -1,0 +1,37 @@
+<h2>Edit customer:</h2><br>
+<div class="container">
+  <form name="form" (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+    <mat-form-field>
+      <mat-label>ID</mat-label>
+      <input matInput name="customerId" type="string" [(ngModel)]="customer.customerId" readonly/>
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput name="customerName" type="string" [(ngModel)]="customer.customerName" required/>
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field>
+      <mat-label>Address</mat-label>
+      <input matInput name="address" type="string" [(ngModel)]="customer.address" required/>
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field>
+      <mat-label>Mobile</mat-label>
+      <input matInput name="mobileNo" type="tel" [(ngModel)]="customer.mobileNo" required/>
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field>
+      <input matInput name="email" placeholder="E-mail" [(ngModel)]="customer.email" required>
+    </mat-form-field>
+    &nbsp;
+    <button
+      class="buttons"
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!form.form.valid">
+      Submit
+    </button>
+  </form>
+</div>

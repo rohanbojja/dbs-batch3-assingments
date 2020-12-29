@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import {CustomerService} from '../services/customer.service';
 import {ICustomer} from '../../entities/ICustomer';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-create-customer',
@@ -10,7 +11,7 @@ import {ICustomer} from '../../entities/ICustomer';
 })
 export class CreateCustomerComponent implements OnInit {
 
-  constructor(private customerService: CustomerService) {
+  constructor(private customerService: CustomerService, private _snackBar: MatSnackBar) {
   }
 
   email: FormControl = new FormControl('', [Validators.required, Validators.email]);
@@ -23,16 +24,9 @@ export class CreateCustomerComponent implements OnInit {
     console.log(f);
     this.customerService.createCustomer(f).subscribe(
       value => {
+        this._snackBar.open(`Customer with ID=${f.customerId}(${f.customerName}) created.`, 'Close');
         console.log(value);
       }
     );
-  }
-
-  getErrorMessage(): string {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
-
-    return this.email.hasError('email') ? 'Not a valid email' : '';
   }
 }

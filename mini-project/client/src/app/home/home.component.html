@@ -1,8 +1,4 @@
-<h1>Home</h1>
-<div *ngIf="customer$ | async as customer">
-  <h2>Current customer:</h2>
-  <app-customer-detail [customer]="customer"></app-customer-detail>
-</div>
+<h1>Dashboard</h1>
 <h2>Favorite customers: </h2>
 <div *ngIf="customerList$ | async as customers">
   <table mat-table [dataSource]="customers">
@@ -23,6 +19,6 @@
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row (click)="selectCustomer(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 </div>
